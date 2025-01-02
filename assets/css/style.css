@@ -5,13 +5,10 @@ header > h1 {
 }
 
 nav {
-    font-size: 2rem;
-}
-
-#navbarNav > .navbar-nav > li {
-    color: white;
-    text-decoration: none;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 2rem;
 }
 
 #navbarNav > .navbar-nav > li > a {
