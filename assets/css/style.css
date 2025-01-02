@@ -4,10 +4,12 @@ header > h1 {
     font-size: 5rem;
 }
 
-nav {
+.navbar-nav {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    width: 100%;
     font-size: 2rem;
 }
 
