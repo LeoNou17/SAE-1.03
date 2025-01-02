@@ -1,0 +1,20 @@
+header > h1 {
+    color: rebeccapurple;
+    text-align: center;
+    font-size: 5rem;
+}
+
+nav {
+    font-size: 2rem;
+}
+
+#navbarNav > .navbar-nav > li {
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+}
+
+#navbarNav > .navbar-nav > li > a {
+    color: white;
+    text-decoration: none;
+}
