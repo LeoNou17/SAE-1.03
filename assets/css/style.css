@@ -1,7 +1,10 @@
-header > h1 {
+header{
     color: rebeccapurple;
     text-align: center;
-    font-size: 5rem;
+}
+
+header h1, h2{
+    font-size: 4rem;
 }
 
 nav {
