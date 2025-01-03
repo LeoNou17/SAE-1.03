@@ -4,6 +4,10 @@ header > h1 {
     font-size: 5rem;
 }
 
+nav {
+    background: #e3f2fd;
+}
+
 .navbar-nav {
     display: flex;
     flex-direction: row;
@@ -13,8 +17,4 @@ header > h1 {
     font-size: 2rem;
 }
 
-#navbarNav > .navbar-nav > li > a {
-    color: white;
-    text-decoration: none;
-}
 
