@@ -20,4 +20,16 @@ nav {
     font-size: 2rem;
 }
 
-
+table {
+    border: solid 1px black;
+    border-collapse: collapse;
+    margin: 15px;
+    margin-top: 40px;
+}
+ td {
+     border: solid 1px black;
+     font-size: 1em;
+ }
+ th {
+     border: solid 1px black;
+ }
