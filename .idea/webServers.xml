@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c760db44-935f-485f-9a27-021ffbdf172d" name="demosrv">
+        <fileTransfer rootFolder="/home/admin_gr103_binome3/monsite.fr" accessType="SFTP" host="192.168.1.2" port="22" sshConfigId="78aab9ef-9e6b-4595-8ac0-81f5d7aa2a74" sshConfig="admin_gr103_binome3@192.168.1.2:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
