@@ -1,43 +1,53 @@
 header{
-    color: rebeccapurple;
+    color: #6C757D;
     text-align: center;
 }
 
-header h1, h2{
+header h1{
     font-size: 4rem;
 }
+
+header h1{
+    font-size: 4rem;
+}
+
 
 nav {
     background: #e3f2fd;
 }
 
+#navbarNavDropdown {
+    justify-content: center;
+}
+
 .navbar-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     font-size: 2rem;
 }
 
- dt {
-     font-size: 1.2em;
-     margin: .3em .3em;
-     border-bottom: purple 2px solid;
- }
+.navbar-nav > li > a {
+    font-size: 2rem;
+    margin: 0 75px ;
+}
 
- dd {
-     margin-left: 1.5em;
- }
+dt {
+    font-size: 1.2em;
+    margin: .3em .3em;
+    border-bottom: purple 2px solid;
+}
 
- table {
-     border: 1px solid black;
- }
- 
- td {
-     border: solid 1px black;
- }
+dd {
+    margin-left: 1.5em;
+}
 
- th {
-     border: 1px solid black;
- }
+table {
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+td {
+    border: solid 1px black;
+}
+
+th {
+    border: 1px solid black;
+}
