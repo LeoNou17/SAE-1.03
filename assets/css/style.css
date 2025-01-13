@@ -72,11 +72,19 @@ th {
     width: 605px;
 }
 
-#carouselExampleDark {
+#carouselExampleDark{
     margin-bottom: 50px;
 }
 
 .articleBorder {
-    border: 6px solid #595959;
+    border: 6px solid var(--bs-info-border-subtle);
     border-radius: 10px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.articleBorder > img {
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
 }

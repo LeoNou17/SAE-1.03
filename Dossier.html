@@ -64,7 +64,8 @@
                         </div>
                         <div class="carousel-item">
                             <img src="assets/images/vm2.png"  alt=""/>
-                            <p>Le nom de l’utilisateur est celui indiqué dans le document de référence (admin_GrXX_BinomeYY, XX = 103 et YY = 3).</p>
+                            <p>Le nom de l’utilisateur est celui indiqué dans le document de référence <br>
+                                (admin_GrXX_BinomeYY, XX = 103 et YY = 3).</p>
                         </div>
                         <div class="carousel-item">
                             <img src="assets/images/vm3.png"  alt=""/>
@@ -73,7 +74,7 @@
                         </div>
                         <div class="carousel-item">
                             <img src="assets/images/vm4.png"  alt=""/>
-                            <p>Notre machine virtuelle n’a que 15 Gio d’espace mémoire puisque Debian ne prend qu’environ 10 Gio laissant 5 Gio pour réaliser la Sae ce qu’il est suffisant.</p>
+                            <p>Notre machine virtuelle n’a que 15 Gio d’espace mémoire puisque Debian <br> ne prend qu’environ 10 Gio laissant 5 Gio pour réaliser la Sae ce qu’il est suffisant.</p>
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
@@ -86,25 +87,54 @@
                     </button>
                 </div>
             </article>
+
             <article class="articleBorder">
                 <h3>Création des différents utilisateurs</h3>
                 <p>La création d'utilisation se fait via l'utilisation de la commande useradd.</p>
                 <img src="assets/images/utilisateur (1).png" height="19" width="451" alt="création du premier binome"/><br>
                 <img src="assets/images/utilisateur (2).png" height="23" width="455" alt="création du deuxième binome"/><br>
-                <img src="assets/images/binome.png" height="108" width="573" alt="Les deux binomes"/><br>
+                <img src="assets/images/binome.png" height="108" width="573" alt="Les deux binomes"/>
                 <p>Après leur création, nous les mettons dans un groupe nommé Binome3. <br>
                     Pour créer le groupe, la commande groupadd fut utilisé.</p>
-                <img src="assets/images/groupeCreer.png" height="18" width="447" alt="Création du groupe avec sudo groupadd Binome3"/><br>
+                <img src="assets/images/groupeCreer.png" height="18" width="447" alt="Création du groupe avec sudo groupadd Binome3"/>
                 <p>
                     Ensuite, en utilisant la commande usermod avec les options a et G <br>
-                    (l’option a rajoute l’utilisateur dans le groupe mais doit être utiliser avec l’option G sinon la commande ne fonctionne pas).<br>
+                    (l’option a doit être utiliser avec l’option G sinon la commande ne fonctionne pas).<br>
                     Nous ajoutons les utilisateurs (binome3_1 et binome3_2) dans le groupe Binome3.<br>
                 </p>
-                <img src="assets/images/binomeAjouter.png" height="23" width="513" alt="Ajoute du binome 3_1 avec la commande usermod -aG Binome3 binome3_1 "/><br>
+                <img src="assets/images/binomeAjouter.png" height="23" width="513" alt="Ajoute du binome 3_1 avec la commande usermod -aG Binome3 binome3_1 "/>
                 <p>
                     Pour vérifier que les utilisateurs sont bien dans le groupe, nous pouvons utiliser<br>
                     la commande getent group, listant tous les groupes existant avec les utilisateurs dedans.
                 </p>
+                <img src="assets/images/getent.png" height="21" width="367" alt="Commande getent"/><br>
+                <img src="assets/images/group.png" height="15" width="314" alt="le group Binome3 avec ses utilisateurs."/>
+            </article>
+
+            <article class="articleBorder">
+                <h3>Personnalisation d’une invite de commande</h3>
+                <p>Nous avons créé quatre fichiers différents pour personnaliser l’invite de commande.<br>
+                    Il existe trois fichiers pour les trois différents utilisateurs et un fichier pour le PS1 de défaut. </p>
+                <img src="assets/images/fichier.png" height="165" width="638" alt="Le fichier avec toutes les invites de commandes personnalisé"/><br>
+                <p>
+                    Chaque invite de commande a une couleur différente pour le nom de l’utilisateur indiqué par [\033[couleur\]]. <br>
+                    Il faut le mettre avant le nom de l’utilisateur pour qu’il est la couleur voulu. Le \w affiche le chemin courant.<br>
+                    La dernière couleur (noir) est la même pour tout le monde, elle va permettre de changer la couleur en noir pour le reste du texte <br>
+                    (après le chemin courant, le texte est en noir).
+                </p>
+                <img src="assets/images/admin prompt.png" height="39" width="604" alt=""/>
+                <img src="assets/images/admin couleur.png" height="19" width="197" alt=""/>
+                <img src="assets/images/binome3_1 prompt.png" height="37" width="601"/>
+                <img src="assets/images/binome3_1 couleur.png" height="23" width="198"/>
+                <img src="assets/images/binome3_2 prompt.png" height="39" width="607"/>
+                <img src="assets/images/binome3_2 couleur.png" height="20" width="203"/>
+                <p>Pour utiliser les personnalisation, il faut juste stocker le contenu du fichier dans une variable avec la commade :<br>
+                    maVariable=$(cat chemin vers le fichier)
+                </p>
+                <img src="assets/images/commande variable.png" height="21" width="466"/>
+                <p>Puis mettre le contenu dans PS1. </p>
+                <img src="assets/images/changement.png" height="15" width="255"/>
+
             </article>
         </section>
         <footer class="fixed-bottom">
