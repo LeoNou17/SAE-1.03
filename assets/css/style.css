@@ -1,19 +1,29 @@
 header{
-    color: #6C757D;
+    color: #fff;
     text-align: center;
+    background: #212529;
 }
 
 header h1{
     font-size: 4rem;
 }
 
-header h1{
-    font-size: 4rem;
+header h2{
+    font-size: 2rem;
+    margin-bottom: 0;
 }
 
+body {
+    background: #F8F9FA;
+    font-size: 1.25rem;
+}
 
 nav {
-    background: #e3f2fd;
+    background: #8fd1ff;
+}
+
+#logo {
+    max-width: 30px ;
 }
 
 #navbarNavDropdown {
@@ -39,9 +49,14 @@ dd {
     margin-left: 1.5em;
 }
 
+#tableDossier {
+    border: 1px solid black;
+    margin: 50px auto 50px ;
+}
+
 table {
     border: 1px solid black;
-    margin: 0 auto;
+    margin: 10px auto 0;
 }
 
 td {
@@ -50,4 +65,18 @@ td {
 
 th {
     border: 1px solid black;
+}
+
+#carouselExampleDark > .carousel-inner > .item {
+    height: 332px;
+    width: 605px;
+}
+
+#carouselExampleDark {
+    margin-bottom: 50px;
+}
+
+.articleBorder {
+    border: 6px solid #595959;
+    border-radius: 10px;
 }

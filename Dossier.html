@@ -16,13 +16,16 @@
             <h2>Dossier</h2>
         </header>
         <nav class="navbar navbar-expand-lg">
+            <div class="container" id="logo">
+                <img src="assets/images/computer-solid.svg" alt="computer" width="30" height="24">
+            </div>
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" >
                         <li><a class="dropdown-item" href="index.html">Accueil</a></li>
                         <li><a class="dropdown-item" href="Dossier.html">Dossier d'étude</a></li>
                         <li><a class="dropdown-item" href="diagramme.html">Diagramme de Gantt</a></li>
@@ -31,7 +34,7 @@
             </div>
         </nav>
         <section class="container text-center">
-            <table class="text-bg-light p-3">
+            <table class="text-bg-light p-3" id="tableDossier">
                 <thead>
                 <tr>
                     <th> Type de virtualisation pour les environnements VirtualBox, VmWare Workstation et Stratus</th>
@@ -50,34 +53,62 @@
                 </tr>
                 </tbody>
             </table>
-            <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="...">
-                        <p>tetzetz</p>
+            <article class="col-md-auto">
+                <h3>Création d'une machine virtuelle</h3>
+                <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="assets/images/vm1.png" alt=""/>
+                            <p>Nous avons créé une machine au nom de la SAE et est stocké à l’emplacement d’origine (nous ne l’avons pas déplacé).<br>
+                                Nous avons utilisé la distribution Linux Debian puisque nous l’utilisons le même sur les ordinateurs de l’IUT.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/vm2.png"  alt=""/>
+                            <p>Le nom de l’utilisateur est celui indiqué dans le document de référence (admin_GrXX_BinomeYY, XX = 103 et YY = 3).</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/vm3.png"  alt=""/>
+                            <p>Nous avons mis 4096 Mo de mémoire vive, cela est le double de la recommandation dans le site officiel de Debian (2 Gio) <br>
+                                et 4 processeurs pour une meilleure performance de la machine virtuelle.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="assets/images/vm4.png"  alt=""/>
+                            <p>Notre machine virtuelle n’a que 15 Gio d’espace mémoire puisque Debian ne prend qu’environ 10 Gio laissant 5 Gio pour réaliser la Sae ce qu’il est suffisant.</p>
+                        </div>
                     </div>
-                    <div class="carousel-item">
-                        <img src="assets/images/diagramme.png" class="d-block w-100" alt="...">
-                        <p>tetzzefetz</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
-                        <p>tetzetzfezfez</p>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
-                        <p>tetzetzfefgzezfez</p>
-                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
+            </article>
+            <article class="articleBorder">
+                <h3>Création des différents utilisateurs</h3>
+                <p>La création d'utilisation se fait via l'utilisation de la commande useradd.</p>
+                <img src="assets/images/utilisateur (1).png" height="19" width="451" alt="création du premier binome"/><br>
+                <img src="assets/images/utilisateur (2).png" height="23" width="455" alt="création du deuxième binome"/><br>
+                <img src="assets/images/binome.png" height="108" width="573" alt="Les deux binomes"/><br>
+                <p>Après leur création, nous les mettons dans un groupe nommé Binome3. <br>
+                    Pour créer le groupe, la commande groupadd fut utilisé.</p>
+                <img src="assets/images/groupeCreer.png" height="18" width="447" alt="Création du groupe avec sudo groupadd Binome3"/><br>
+                <p>
+                    Ensuite, en utilisant la commande usermod avec les options a et G <br>
+                    (l’option a rajoute l’utilisateur dans le groupe mais doit être utiliser avec l’option G sinon la commande ne fonctionne pas).<br>
+                    Nous ajoutons les utilisateurs (binome3_1 et binome3_2) dans le groupe Binome3.<br>
+                </p>
+                <img src="assets/images/binomeAjouter.png" height="23" width="513" alt="Ajoute du binome 3_1 avec la commande usermod -aG Binome3 binome3_1 "/><br>
+                <p>
+                    Pour vérifier que les utilisateurs sont bien dans le groupe, nous pouvons utiliser<br>
+                    la commande getent group, listant tous les groupes existant avec les utilisateurs dedans.
+                </p>
+            </article>
         </section>
+        <footer class="fixed-bottom">
+            &copy;sae1.03
+        </footer>
     </body>
 </html>
