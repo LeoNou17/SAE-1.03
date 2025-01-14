@@ -134,8 +134,41 @@
                 <img src="assets/images/commande variable.png" height="21" width="466"/>
                 <p>Puis mettre le contenu dans PS1. </p>
                 <img src="assets/images/changement.png" height="15" width="255"/>
-
             </article>
+
+            <article class="articleBorder">
+                <h3>Installation et configuration d’un service web</h3>
+                <p>Nous avons décidé d’utiliser Apache configurer le serveur web.<br>
+                    Avant de pouvoir configurer Apache, il faut installer Openssh qui permettent des <br>
+                    communications sécurisées sur un réseau en utilisant le protocole SSH.<br>
+                    Pour l’installer, nous devons utiliser la commande sudo apt install openssh-server.</p>
+                <img src="assets/images/shh.png" height="21" width="491"/>
+                <p>Pour le lancer le serveur, nous utilisons l’ip de la machine virtuelle (obtenu avec ip -c addr).</p>
+                <img src="assets/images/ip.png" height="360" width="990"/>
+                <img src="assets/images/serv ssh.png" height="22" width="578"/>
+                <p>Cette commande permet d’ouvrir le serveur avec comme clé 192.168.1.2.<br> L’installation de apache2 se fait via la commande sudo apt install apache2.<br>
+                    Après l’installation le serveur se lance automatiquement ou nous pouvons le lancer avec la commande sudo service apache2 start.<br>
+                    Nous devons créer un nouveau répertoire pour stocker les fichiers html et css mais aussi le répertoire a indiqué à apache2 pour afficher le site.
+                </p>
+                <img src="assets/images/dossier site.png" height="126" width="148"/>
+                <p>Il faut maintenant configurer les fichiers d’apache pour que notre site s’affiche. Dans le répertoire </p>
+                <img src="assets/images/apache enabled.png" height="22" width="475"/>
+                <p>Nous pouvons trouver un lien vers un fichier de configuration par défaut d’apache. </p>
+                <img src="assets/images/lien apache.png" height="63" width="871"/>
+                <p>En utilisant la commande suivante nous pouvons modifier le chemin par défaut par le chemin absolu vers notre répertoire de notre site web.</p>
+                <img src="assets/images/defaut conf.png" height="21" width="707"/>
+                <p>L’emplacement où changer le chemin (celui par défaut /var/www/html)</p>
+                <img src="assets/images/chemin.png" height="28" width="265"/>
+                <p>Ensuite, nous devons modifier le fichier apache2.conf pour préciser où est-ce qu’apache doit travailler. </p>
+                <img src="assets/images/apache2.png" height="22" width="535"/>
+                <img src="assets/images/lieu.png" height="124" width="256"/>
+                <p>Il faut maintenant créer un lien dans le répertoire srv vers le répertoire « monsite.fr ».</p>
+                <img src="assets/images/lien.png" height="18" width="803"/>
+                <img src="assets/images/ls lien.png" height="62" width="808"/>
+                <p>Sur WebStorm, nous devons déployer notre site web en indiquant le serveur et le chemin absolu vers le répertoire qui va contenir tous les fichiers.</p>
+                <img src="assets/images/webstorm.png" height="693" width="802"/>
+            </article>
+
         </section>
         <footer class="fixed-bottom">
             &copy;sae1.03
