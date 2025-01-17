@@ -49,7 +49,7 @@
                 <tbody>
                 <tr>
                     <th> Forme/lieu de sauvegarde de la machine virtuelle créée</th>
-                    <td> C</td>
+                    <td> Disque local C, chemin : C:\Users\Neolo\VirtualBox VMs </td>
                 </tr>
                 </tbody>
             </table>
@@ -122,12 +122,12 @@
                     La dernière couleur (noir) est la même pour tout le monde, elle va permettre de changer la couleur en noir pour le reste du texte <br>
                     (après le chemin courant, le texte est en noir).
                 </p>
-                <img src="assets/images/admin prompt.png" height="39" width="604" alt=""/>
-                <img src="assets/images/admin couleur.png" height="19" width="197" alt=""/>
-                <img src="assets/images/binome3_1 prompt.png" height="37" width="601"/>
-                <img src="assets/images/binome3_1 couleur.png" height="23" width="198"/>
-                <img src="assets/images/binome3_2 prompt.png" height="39" width="607"/>
-                <img src="assets/images/binome3_2 couleur.png" height="20" width="203"/>
+                <img src="assets/images/admin prompt.png" height="39" width="604" alt="La valeur de personalisation pour l'admin."/>
+                <img src="assets/images/admin couleur.png" height="19" width="197" alt="La personalisation pour l'admin."/>
+                <img src="assets/images/binome3_1 prompt.png" height="37" width="601" alt="La valeur de personalisation pour le binome 1."/>
+                <img src="assets/images/binome3_1 couleur.png" height="23" width="198" alt="La personalisation pour le binome 1."/>
+                <img src="assets/images/binome3_2 prompt.png" height="39" width="607" alt="La valeur de personalisation pour le binome 2."/>
+                <img src="assets/images/binome3_2 couleur.png" height="20" width="203" alt="La personalisation pour le binome 2."/>
                 <p>Pour utiliser les personnalisation, il faut juste stocker le contenu du fichier dans une variable avec la commade :<br>
                     maVariable=$(cat chemin vers le fichier)
                 </p>
@@ -142,31 +142,35 @@
                     Avant de pouvoir configurer Apache, il faut installer Openssh qui permettent des <br>
                     communications sécurisées sur un réseau en utilisant le protocole SSH.<br>
                     Pour l’installer, nous devons utiliser la commande sudo apt install openssh-server.</p>
-                <img src="assets/images/shh.png" height="21" width="491"/>
+                <img src="assets/images/shh.png" height="21" width="491" alt="Installation de shh."/>
                 <p>Pour le lancer le serveur, nous utilisons l’ip de la machine virtuelle (obtenu avec ip -c addr).</p>
-                <img src="assets/images/ip.png" height="360" width="990"/>
-                <img src="assets/images/serv ssh.png" height="22" width="578"/>
+                <img src="assets/images/ip.png" height="360" width="990" alt="Adresse ip de la machine 192.168.1.2"/>
+                <img src="assets/images/serv ssh.png" height="22" width="578" alt="Enregistre l'adresse ip comme clé de chiffrement."/>
                 <p>Cette commande permet d’ouvrir le serveur avec comme clé 192.168.1.2.<br> L’installation de apache2 se fait via la commande sudo apt install apache2.<br>
-                    Après l’installation le serveur se lance automatiquement ou nous pouvons le lancer avec la commande sudo service apache2 start.<br>
+                    <img src="assets/images/install apache.png" height="24" width="467" alt="Installation d'apache2."/>
+                    <br>Après l’installation le serveur se lance automatiquement ou nous pouvons le lancer avec la commande sudo service apache2 start.<br>
                     Nous devons créer un nouveau répertoire pour stocker les fichiers html et css mais aussi le répertoire a indiqué à apache2 pour afficher le site.
                 </p>
-                <img src="assets/images/dossier site.png" height="126" width="148"/>
+                <img src="assets/images/dossier site.png" height="126" width="148" alt="Le dossier stockant les fichiers html et css"/>
                 <p>Il faut maintenant configurer les fichiers d’apache pour que notre site s’affiche. Dans le répertoire </p>
-                <img src="assets/images/apache enabled.png" height="22" width="475"/>
+                <img src="assets/images/apache enabled.png" height="22" width="475" alt="Le chemin du dossier."/>
                 <p>Nous pouvons trouver un lien vers un fichier de configuration par défaut d’apache. </p>
-                <img src="assets/images/lien apache.png" height="63" width="871"/>
+                <img src="assets/images/lien apache.png" height="63" width="871" alt="Le lien vers le fichier."/>
                 <p>En utilisant la commande suivante nous pouvons modifier le chemin par défaut par le chemin absolu vers notre répertoire de notre site web.</p>
-                <img src="assets/images/defaut conf.png" height="21" width="707"/>
+                <img src="assets/images/defaut conf.png" height="21" width="707" alt="La commande pour modifier le fichier."/>
                 <p>L’emplacement où changer le chemin (celui par défaut /var/www/html)</p>
-                <img src="assets/images/chemin.png" height="28" width="265"/>
-                <p>Ensuite, nous devons modifier le fichier apache2.conf pour préciser où est-ce qu’apache doit travailler. </p>
-                <img src="assets/images/apache2.png" height="22" width="535"/>
-                <img src="assets/images/lieu.png" height="124" width="256"/>
-                <p>Il faut maintenant créer un lien dans le répertoire srv vers le répertoire « monsite.fr ».</p>
-                <img src="assets/images/lien.png" height="18" width="803"/>
-                <img src="assets/images/ls lien.png" height="62" width="808"/>
+                <img src="assets/images/chemin.png" height="28" width="265" alt="L'interieur du fichier."/>
+                <p>Ensuite, nous devons modifier le fichier apache2.conf, se trouvant dans le dossier /etc/apache2, pour préciser où est-ce qu’apache doit travailler. </p>
+                <img src="assets/images/apache2.png" height="22" width="535" alt="Le fichier apache a modifier."/>
+                <p>Il faut décommenter les lignes suivantes et indiquer le lien du répertoire qui contient les fichiers du site web.</p>
+                <img src="assets/images/lieu.png" height="124" width="256" alt="Ce qu'il faut modifier."/>
+                <p>Il faut maintenant créer un lien dans le répertoire srv (un répertoire pour les données utilisées par un service) vers le répertoire « monsite.fr ».</p>
+                <img src="assets/images/lien.png" height="18" width="803" alt="Le lien (pour le répertoire monsite) a créer dans le répertoire srv."/>
+                <img src="assets/images/ls lien.png" height="62" width="808" alt="Ls du répertoire srv."/>
                 <p>Sur WebStorm, nous devons déployer notre site web en indiquant le serveur et le chemin absolu vers le répertoire qui va contenir tous les fichiers.</p>
-                <img src="assets/images/webstorm.png" height="693" width="802"/>
+                <img src="assets/images/webstorm.png" height="693" width="802" alt="Le déployement de webstorm sur le serveur."/>
+                <p>Nous pouvons voir le site en tapant l’adresse IP de la machine virtuelle. </p>
+                <img src="assets/images/site serveur.png" height="197" width="778" alt="Exemple pour voir le serveur."/>
             </article>
 
         </section>
